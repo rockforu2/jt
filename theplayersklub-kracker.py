@@ -8,7 +8,7 @@ found = 0
 valid = []
 for item in y:
 	v = item.split(':')
-	z = requests.get('http://thepk.co:2086/xmltv.php?username=' + v[0] + '&password=' + v[1] + '&type=m3u_plus&output=ts')
+	z = requests.get('http://thepk.co:2086/xmltv.php?username=john' + v[0] + '&password=john' + v[1] + '&type=m3u_plus&output=ts')
 	if z.text == '':
 		print(v[0] + ' not valid')
 	else:
@@ -32,7 +32,7 @@ if found > 0:
 			for item in valid:
 				r = item.split(':')
 				print('writing info for ' + r[0])
-				s.write('Account: ' + r[0] + '\nM3U file: http://thepk.co:2086/get.php?username=' + r[0] + '&password=' + r[1] + '&type=m3u_plus&output=ts\nEPG list: http://thepk.co:2086/xmltv.php?username=' + r[0] + '&password=' + r[1] + '&type=m3u_plus&output=ts\n\n=======================\n\n')
+				s.write('Account: ' + r[0] + '\nM3U file: http://thepk.co:2086/get.php?username=john' + r[0] + '&password=john' + r[1] + '&type=m3u_plus&output=ts\nEPG list: http://thepk.co:2086/xmltv.php?username=' + r[0] + '&password=' + r[1] + '&type=m3u_plus&output=ts\n\n=======================\n\n')
 			s.close()
 		elif t.lower() == 'dl':
 			print('In actuality, this will give you outdated results sooner or later. Please just use the URLs, but if you need this for offline viewing, bingo.')
@@ -44,9 +44,9 @@ if found > 0:
 				q = open(r[0] + '/' + r[0] + '.m3u', 'w')
 				p = open(r[0] + '/' + r[0] + '_epg.xml', 'w')
 				print('downloading m3u for ' + r[0])
-				q.write(requests.get('http://thepk.co:2086/get.php?username=' + r[0] + '&password=' + r[1] + '&type=m3u_plus&output=ts').text)
+				q.write(requests.get('http://thepk.co:2086/get.php?username=john' + r[0] + '&password=john' + r[1] + '&type=m3u_plus&output=ts').text)
 				print('downloading epg for ' + r[0])
-				p.write(requests.get('http://thepk.co:2086/xmltv.php?username=' + r[0] + '&password=' + r[1] + '&type=m3u_plus&output=ts').text)
+				p.write(requests.get('http://thepk.co:2086/xmltv.php?username=john' + r[0] + '&password=john' + r[1] + '&type=m3u_plus&output=ts').text)
 				q.close()
 				p.close()
 		elif t.lower() == 'both' or t.lower() == 'b':
@@ -55,7 +55,7 @@ if found > 0:
 			for item in valid:
 				r = item.split(':')
 				print('writing info for ' + r[0])
-				s.write('Account: ' + r[0] + '\nM3U file: http://thepk.co:2086/get.php?username=' + r[0] + '&password=' + r[1] + '&type=m3u_plus&output=ts\nEPG list: http://thepk.co:2086/xmltv.php?username=' + r[0] + '&password=' + r[1] + '&type=m3u_plus&output=ts\n\n=======================\n\n')
+				s.write('Account: ' + r[0] + '\nM3U file: http://thepk.co:2086/get.php?username=john' + r[0] + '&password=john' + r[1] + '&type=m3u_plus&output=ts\nEPG list: http://thepk.co:2086/xmltv.php?username=' + r[0] + '&password=' + r[1] + '&type=m3u_plus&output=ts\n\n=======================\n\n')
 			s.close()
 			for item in valid:
 				r = item.split(':')
@@ -65,9 +65,9 @@ if found > 0:
 				q = open(r[0] + '/' + r[0] + '.m3u', 'w')
 				p = open(r[0] + '/' + r[0] + '_epg.xml', 'w')
 				print('downloading m3u for ' + r[0])
-				q.write(requests.get('http://thepk.co:2086/get.php?username=' + r[0] + '&password=' + r[1] + '&type=m3u_plus&output=ts').text)
+				q.write(requests.get('http://thepk.co:2086/get.php?username=john' + r[0] + '&password=john' + r[1] + '&type=m3u_plus&output=ts').text)
 				print('downloading epg for ' + r[0])
-				p.write(requests.get('http://thepk.co:2086/xmltv.php?username=' + r[0] + '&password=' + r[1] + '&type=m3u_plus&output=ts').text)
+				p.write(requests.get('http://thepk.co:2086/xmltv.php?username=john' + r[0] + '&password=john' + r[1] + '&type=m3u_plus&output=ts').text)
 				q.close()
 				p.close()
 		else:
